@@ -60,6 +60,7 @@ class SubscriberController extends Controller
 
     // handle insert a new subscriber ajax request
     public function store(Request $request) {
+
         $file = $request->file('file');
         $fileName = time() . '.' . $file->getClientOriginalExtension();
         $file->storeAs('public/images', $fileName);

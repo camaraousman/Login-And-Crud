@@ -15,24 +15,38 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <form action="#" method="POST" id="add_subscriber_form" enctype="multipart/form-data">
+
+        @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
+
+
+
         @csrf
         <div class="modal-body p-4 bg-light">
           <div class="row">
             <div class="col-lg">
-              <label for="fname">First Name</label>
+              <label for="fname">First Name *</label>
               <input type="text" name="fname" class="form-control" placeholder="First Name" required>
             </div>
             <div class="col-lg">
-              <label for="lname">Last Name</label>
+              <label for="lname">Last Name *</label>
               <input type="text" name="lname" class="form-control" placeholder="Last Name" required>
             </div>
           </div>
           <div class="my-2">
             <label for="email">E-mail</label>
-            <input type="email" name="email" class="form-control" placeholder="E-mail" required>
+            <input type="email" name="email" class="form-control" placeholder="E-mail">
           </div>
           <div class="my-2">
-            <label for="phone">Phone</label>
+            <label for="phone">Phone *</label>
             <input type="tel" name="phone" class="form-control" placeholder="Phone" required>
           </div>
           <div class="my-2">
@@ -40,15 +54,15 @@
             <input type="text" name="number_plate" class="form-control" placeholder="number_plate" required>
             <div class="col-lg">
               <label for="kimlik">Kimlik</label>
-              <input type="text" name="kimlik" class="form-control" placeholder="Kimlik" required>
+              <input type="text" name="kimlik" class="form-control" placeholder="Kimlik">
             </div>
             <div class="col-lg">
               <label for="lname">Address</label>
-              <input type="text" name="address" class="form-control" placeholder="address" required>
+              <input type="text" name="address" class="form-control" placeholder="address">
             </div>
           </div>
           <div class="my-2">
-            <label for="file">Select File</label>
+            <label for="file">Select File *</label>
             <input type="file" name="file" class="form-control" required>
           </div>
         </div>
@@ -88,7 +102,7 @@
           </div>
           <div class="my-2">
             <label for="email">E-mail</label>
-            <input type="email" name="email" id="email" class="form-control" placeholder="E-mail" required>
+            <input type="email" name="email" id="email" class="form-control" placeholder="E-mail">
           </div>
           <div class="my-2">
             <label for="phone">Phone</label>
@@ -100,11 +114,11 @@
           </div>
           <div class="col-lg">
               <label for="kimlik">Kimlik</label>
-              <input type="text" name="kimlik" class="form-control" placeholder="Kimlik" required>
+              <input type="text" name="kimlik" class="form-control" placeholder="Kimlik">
             </div>
             <div class="col-lg">
               <label for="address">Address</label>
-              <input type="text" name="address" class="form-control" placeholder="Address" required>
+              <input type="text" name="address" class="form-control" placeholder="Address">
             </div>
           <div class="my-2">
             <label for="file">Select File</label>

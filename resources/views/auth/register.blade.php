@@ -1,7 +1,12 @@
 @extends('layouts.auth-master')
 
+
 @section('navsection')
-@include('layouts.partials.navbar')
+
+<nav class="navbar">
+            <a class="nav-link" href="{{ url('/') }}">Dashboard</a>
+
+</nav>
 @endsection
 
 @section('content')
@@ -46,6 +51,6 @@
 
         <button class="w-100 btn btn-lg btn-primary" type="submit">Register</button>
         
-        @include('auth.partials.copy')
+       
     </form>
 @endsection

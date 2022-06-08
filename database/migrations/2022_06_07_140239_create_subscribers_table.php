@@ -17,11 +17,11 @@ return new class extends Migration
             $table->id();
             $table->string('first_name');
             $table->string('last_name');
-            $table->string('email');
+            $table->string('email')->nullable();
             $table->string('phone');
             $table->string('number_plate');
-            $table->string('kimlik');
-            $table->string('address');
+            $table->string('kimlik')->nullable();
+            $table->string('address')->nullable();
             $table->string('file');
             $table->timestamps();
         });

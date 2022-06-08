@@ -49,20 +49,4 @@ class LoginRequest extends FormRequest
         return $this->only('userId', 'password');
     }
 
-    /**
-     * Validate if provided parameter is valid email.
-     *
-     * @param $param
-     * @return bool
-     * @throws \Illuminate\Contracts\Container\BindingResolutionException
-     */
-    // private function isEmail($param)
-    // {
-    //     $factory = $this->container->make(ValidationFactory::class);
-
-    //     return ! $factory->make(
-    //         ['username' => $param],
-    //         ['username' => 'email']
-    //     )->fails();
-    // }
 }
