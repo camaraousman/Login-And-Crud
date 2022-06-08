@@ -27,6 +27,7 @@ class User extends Authenticatable
     public function setPasswordAttribute($value){
         $this->attributes['password'] = bcrypt($value);
     }
+    protected $primaryKey = 'userId';
 
     /**
      * The attributes that should be hidden for serialization.
@@ -34,6 +35,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $hidden = [
+        'name',
         'password',
         'remember_token',
     ];

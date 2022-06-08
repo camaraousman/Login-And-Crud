@@ -73,7 +73,7 @@
 
 
 
-    <main>
+    <main class="container-fluid">
         @yield('main')
     </main>
 

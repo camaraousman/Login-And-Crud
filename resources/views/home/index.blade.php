@@ -1,15 +1,10 @@
 @extends('layouts.app')
 
-
-
-
-
-
-
-
+@include('layouts.partials.messages')
 @section('main')
 
 @auth
+
 {{-- add new subscriber modal start --}}
 <div class="modal fade" id="addSubscriberModal" tabindex="-1" aria-labelledby="exampleModalLabel"
   data-bs-backdrop="static" aria-hidden="true">

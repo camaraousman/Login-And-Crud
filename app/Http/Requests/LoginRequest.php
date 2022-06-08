@@ -4,6 +4,12 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Contracts\Validation\Factory as ValidationFactory;
+use Illuminate\Auth\Events\Lockout;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\RateLimiter;
+use Illuminate\Support\Str;
+use Illuminate\Validation\ValidationException;
+
 
 class LoginRequest extends FormRequest
 {
@@ -38,19 +44,8 @@ class LoginRequest extends FormRequest
      */
     public function getCredentials()
     {
-        // The form field for providing username or password
-        // have name of "username", however, in order to support
-        // logging users in with both (username and email)
-        // we have to check if user has entered one or another
-        $username = $this->get('userId');
-
-        // if ($this->isEmail($username)) {
-        //     return [
-        //         'email' => $username,
-        //         'password' => $this->get('password')
-        //     ];
-        // }
-
+        
+        $username = $this->get('userId','required');
         return $this->only('userId', 'password');
     }
 

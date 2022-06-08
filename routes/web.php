@@ -1,5 +1,6 @@
 <?php
 use App\Http\Controllers\SubscriberController;
+use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,8 +25,8 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
         /**
          * Register Routes
          */
-        Route::get('/register', 'RegisterController@show')->name('register.show');
-        Route::post('/register', 'RegisterController@register')->name('register.perform');
+        // Route::get('/register', 'RegisterController@show')->name('register.show');
+        // Route::post('/register', 'RegisterController@register')->name('register.perform');
 
         /**
          * Login Routes
@@ -37,9 +38,8 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
 
     Route::group(['middleware' => ['auth']], function() {
 
-        /**
-         * Logout Routes
-         */
+       
+        //logout
         Route::get('/logout', 'LogoutController@perform')->name('logout.perform');
     });
 });
@@ -52,3 +52,9 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
         Route::delete('/delete', [SubscriberController::class, 'delete'])->name('delete');
         Route::get('/edit', [SubscriberController::class, 'edit'])->name('edit');
         Route::post('/update', [SubscriberController::class, 'update'])->name('update');
+
+         //create user
+         Route::get('/register-user', [RegisterController::class, 'show'])->name('register-user.show');
+         Route::post('/register-user', [RegisterController::class, 'register'])->name('register-user.perform');
+         
+ 

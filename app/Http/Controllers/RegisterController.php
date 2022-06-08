@@ -29,7 +29,7 @@ class RegisterController extends Controller
     {
         $user = User::create($request->validated());
 
-        auth()->login($user);
+        // auth()->login($user);
 
         return redirect('/')->with('success', "Account successfully registered.");
     }

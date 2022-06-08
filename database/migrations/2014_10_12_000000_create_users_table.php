@@ -14,22 +14,25 @@ return new class extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->id();
+            $table->id('userId');
             $table->string('name')->nullable();
             $table->string('email')->unique();
-            $table->string('userId')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->integer('role')->default(1);
             $table->rememberToken();
             $table->timestamps();
         });
+
+        //initialize Id 
+        DB::statement("ALTER TABLE users AUTO_INCREMENT = 1981;");
 
         //insert default user
         DB::table('users')->insert
         ([
             'name' => 'Ousman Camara',
             'email' => 'ousman@gmail.com',
-            'userId' => '100',
+            'role' => '0',
             'password' => Hash::make('password'),
         ]);
     }
