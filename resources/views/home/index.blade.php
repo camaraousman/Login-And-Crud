@@ -25,10 +25,6 @@
         </ul>
     </div>
 @endif
-
-
-
-
         @csrf
         <div class="modal-body p-4 bg-light">
           <div class="row">
@@ -57,7 +53,7 @@
               <input type="text" name="kimlik" class="form-control" placeholder="Kimlik">
             </div>
             <div class="col-lg">
-              <label for="lname">Address</label>
+              <label for="address">Address</label>
               <input type="text" name="address" class="form-control" placeholder="address">
             </div>
           </div>
@@ -114,11 +110,11 @@
           </div>
           <div class="col-lg">
               <label for="kimlik">Kimlik</label>
-              <input type="text" name="kimlik" class="form-control" placeholder="Kimlik">
+              <input type="text" name="kimlik" id="kimlik" class="form-control" placeholder="Kimlik">
             </div>
             <div class="col-lg">
               <label for="address">Address</label>
-              <input type="text" name="address" class="form-control" placeholder="Address">
+              <input type="text" name="address" id="address" class="form-control" placeholder="Address">
             </div>
           <div class="my-2">
             <label for="file">Select File</label>
